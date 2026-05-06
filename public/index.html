@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks API | Week 21</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="bg-orb orb-one"></div>
+      <div class="bg-orb orb-two"></div>
+      <div class="grid-noise"></div>
+
+      <header class="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Week 21 • NestJS Fundamentals</p>
+          <h1>Tasks API that actually looks cool.</h1>
+          <p class="hero-text">
+            A basic REST API with a polished frontend demo, built from the image plan:
+            setup, modules, controllers, services, dependency injection, DTOs, validation,
+            and the final in-memory Tasks project.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#task-studio">Try the API live</a>
+            <a class="btn btn-secondary" href="#week-map">See day-wise topics</a>
+          </div>
+        </div>
+
+        <section class="hero-card reveal delay-one">
+          <p class="hero-card-label">Deliverable</p>
+          <h2>Basic REST API</h2>
+          <p>Clean NestJS structure with a frontend that lets you create, view, update, and delete tasks.</p>
+          <div class="pill-row">
+            <span class="pill">NestJS</span>
+            <span class="pill">Validation</span>
+            <span class="pill">REST</span>
+            <span class="pill">In-memory</span>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section id="week-map" class="panel reveal">
+          <div class="section-heading">
+            <h2>All days and topics included</h2>
+          </div>
+          <div id="daily-tasks" class="daily-grid"></div>
+        </section>
+
+        <section class="panel reveal delay-one">
+          <div>
+            <p class="section-kicker">Learning goals</p>
+            <h2>Core NestJS concepts covered</h2>
+            <ul id="learning-goals" class="clean-list"></ul>
+          </div>
+        </section>
+
+        <section id="task-studio" class="panel reveal delay-two">
+          <div class="section-heading">
+            <p class="section-kicker">Live frontend + backend</p>
+            <h2>Task Studio</h2>
+            <p>Create tasks from the UI and watch the NestJS API respond in real time.</p>
+          </div>
+
+          <div class="studio-layout">
+            <form id="task-form" class="task-form">
+              <label>
+                <span>Task title</span>
+                <input id="title" name="title" type="text" required />
+              </label>
+
+              <label>
+                <span>Description</span>
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="4"
+                ></textarea>
+              </label>
+
+              <label>
+                <span>Status</span>
+                <select id="status" name="status">
+                  <option value="todo">todo</option>
+                  <option value="in-progress">in-progress</option>
+                  <option value="done">done</option>
+                </select>
+              </label>
+
+              <button type="submit" class="btn btn-primary full-width">Create Task</button>
+              <p id="form-message" class="form-message" aria-live="polite"></p>
+            </form>
+
+            <div class="task-column">
+              <div class="task-column-header">
+                <h3>Current tasks</h3>
+                <button id="refresh-btn" class="btn btn-ghost" type="button">Refresh</button>
+              </div>
+              <div id="task-list" class="task-list"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
